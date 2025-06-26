@@ -27,13 +27,18 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Lottie.asset(
-            "assets/1.json",
-            repeat: true,
-            height: 100,
-            frameRate: FrameRate(130),
-            errorBuilder: (context, object, trace) {
-              return Text("Something went wrong");
+          Expanded(child: SizedBox()),
+          GridView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+            ),
+            itemCount: 9,
+            itemBuilder: (context, index) {
+              return Lottie.asset(
+                "assets/$index.json",
+              );
             },
           ),
         ],
