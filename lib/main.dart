@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -36,8 +37,14 @@ class HomePage extends StatelessWidget {
             ),
             itemCount: 9,
             itemBuilder: (context, index) {
-              return Lottie.asset(
-                "assets/$index.json",
+              return CupertinoButton(
+                onPressed: () {
+                  selected = index;
+                  setState(() {});
+                },
+                child: Lottie.asset(
+                  "assets/$index.json",
+                ),
               );
             },
           ),
