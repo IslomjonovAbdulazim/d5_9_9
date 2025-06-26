@@ -15,8 +15,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int selected = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +35,12 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(child: SizedBox()),
+          Expanded(
+            child: Text(
+              "$selected",
+              style: TextStyle(fontSize: 200),
+            ),
+          ),
           GridView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
