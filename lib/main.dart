@@ -36,10 +36,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Expanded(
-            child: Text(
-              "$selected",
-              style: TextStyle(fontSize: 200),
-            ),
+            child: Lottie.asset("assets/$selected.json"),
           ),
           GridView.builder(
             shrinkWrap: true,
